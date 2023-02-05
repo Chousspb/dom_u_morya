@@ -5,11 +5,12 @@ class House(models.Model):
     price = models.IntegerField('цена')
     description = models.TextField('описание')
     photo = models.ImageField('фотография', upload_to='houses/photo', default='', blank=True)
+    active = models.BooleanField('активен', default=True)
 
     class Meta:
         verbose_name = 'дом'
         verbose_name_plural = 'дома'
-        ordering = ['price']
+        ordering = ['-active', 'price']
 
     def __str__(self):
         return self.name.upper()
