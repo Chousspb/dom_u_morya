@@ -1,6 +1,7 @@
 from django.contrib import admin
-from orders.models import Order
+from .models import Order
+
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['name', 'phone', 'house', 'date']
+    list_display = ["house", "name", "phone", "date"]

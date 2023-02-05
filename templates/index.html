@@ -1,12 +1,14 @@
 <!DOCTYPE html>{% load static %}
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Дом у моря</title>
+    <title>{% block html_title %}Дом у моря{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-{% include 'header.html' %}
+{% include "header.html" %}
 {% block application %}{% endblock %}
+{% include "footer.html" %}
 </body>
 </html>
